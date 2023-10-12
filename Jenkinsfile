@@ -2,10 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Afficher la date') {
+        stage('Récupération du code source') {
+            steps {
+             // Ceci récupère le code source depuis le référentiel Git configuré pour ce job.
+                checkout scm     }
+        }
+        stage('Affichage de la date système') {
             steps {
                 script {
-                    sh 'date'
+                    def currentDate = new Date().format("yyyy-MM-dd HH:mm:ss")
+                    echo "Date système : ${currentDate}"
                 }
             }
         }
