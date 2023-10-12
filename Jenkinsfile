@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Récupération du code source') {
             steps {
-             // Ceci récupère le code source depuis le référentiel Git configuré pour ce job.
+             // Ceci récupère le code source depuis le référentiel Git
                 checkout scm     }
         }
         stage('Affichage de la date système') {
